@@ -1,3 +1,5 @@
+import Exceptions.ConvoiVideException;
+
 import java.util.ArrayList;
 
 public class Convoi {
@@ -30,7 +32,7 @@ public class Convoi {
         }
     }
 
-    public int getVitesseMax() {
+    public int getVitesseMax() throws ConvoiVideException {
         if(!listeVehicules.isEmpty()) {
             int plusBasseVitesse = VITESSE_MAXI;
             for(int i = 0; i<listeVehicules.size(); i++) {
@@ -40,7 +42,22 @@ public class Convoi {
                 }
             }
             return plusBasseVitesse;
-        } else return 0;
+        } else {
+            throw new ConvoiVideException();
+        }
+
+    }
+
+    public int getChargeMax() throws ConvoiVideException {
+        if(!listeVehicules.isEmpty()) {
+            int chargesMaxTotales = 0;
+            for(int i = 0; i<listeVehicules.size(); i++) {
+                chargesMaxTotales += listeVehicules.get(i).charge;
+            }
+            return chargesMaxTotales;
+        } else {
+            throw new ConvoiVideException();
+        }
 
     }
 
