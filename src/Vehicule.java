@@ -1,3 +1,5 @@
+import Exceptions.SurchargeException;
+
 import java.util.UUID;
 
 public abstract class Vehicule {
@@ -15,6 +17,22 @@ public abstract class Vehicule {
         this.chargeMax = chargeMax;
         this.charge = 0;
         this.vitesseMax = vitesseMax;
+    }
+
+    public void setCharge(int charge) throws SurchargeException {
+        if(this.isAllowed(charge)) {
+            this.charge = charge;
+        } else {
+            throw new SurchargeException(this.immatriculation);
+        }
+    }
+
+    public int getVitesseMax() {
+        return this.vitesseMax;
+    }
+
+    private boolean isAllowed(int charge) {
+        return charge < chargeMax;
     }
 
 }

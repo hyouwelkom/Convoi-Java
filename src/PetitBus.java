@@ -1,7 +1,7 @@
 public class PetitBus extends Vehicule {
 
-    private PetitBus() {
-        super(4, 4, 150);
+    public PetitBus() {
+        super(4000, 4000, 150);
     }
 
 }

@@ -1,7 +1,7 @@
-public class CamionCiterne extends Vehicule {
+public class CamionBache extends Vehicule {
 
-    public CamionCiterne() {
-        super(3000, 10000, 0);
+    public CamionBache() {
+        super(4000, 20000, 0);
         this.vitesseMax = calcVitesseMax();
     }
 
@@ -11,11 +11,11 @@ public class CamionCiterne extends Vehicule {
             return 130;
         } else
 
-        if(this.charge <= 1000) {
+        if(this.charge <= 3000) {
             return 110;
         } else
 
-        if(1000 < this.charge && this.charge <= 4000) {
+        if(3000 < this.charge && this.charge <= 7000) {
             return 90;
         } else return 80;
 
@@ -25,4 +25,5 @@ public class CamionCiterne extends Vehicule {
     public int getVitesseMax() {
         return this.calcVitesseMax();
     }
+
 }
