@@ -1,4 +1,6 @@
 import Exceptions.ConvoiVideException;
+import Exceptions.VehiculeDejaPresent;
+import Exceptions.VehiculeNonPresent;
 
 import java.util.ArrayList;
 
@@ -15,19 +17,19 @@ public class Convoi {
         listeVehicules = new ArrayList<>();
     }
 
-    public void addVehicule(Vehicule vehicule) {
+    public void addVehicule(Vehicule vehicule) throws VehiculeDejaPresent {
         if(listeVehicules.contains(vehicule)) {
-            System.out.println("Ce vehicule est déjà dans le convoi !");
+            throw new VehiculeDejaPresent(vehicule.getImmatriculation());
         } else {
             listeVehicules.add(vehicule);
         }
     }
 
-    public void removeVehicule (Vehicule vehicule) {
+    public void removeVehicule (Vehicule vehicule) throws VehiculeNonPresent {
         if(listeVehicules.contains(vehicule)) {
             listeVehicules.remove(vehicule);
         } else {
-            System.out.println("Ce vehicule n'est pas dans le convoi !");
+            throw new VehiculeNonPresent(vehicule.getImmatriculation());
         }
     }
 

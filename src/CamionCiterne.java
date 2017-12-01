@@ -1,7 +1,7 @@
 public class CamionCiterne extends Vehicule {
 
     public CamionCiterne() {
-        super(3000, 10000, 130);
+        super(3000, 10000, VITESSE_MAX);
         this.vitesseMax = calcVitesseMax();
     }
 
