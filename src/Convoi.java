@@ -6,7 +6,6 @@ public class Convoi {
 
     private Convoi instance;
 
-    private final static int VITESSE_MAXI = 150;
 
     private ArrayList<Vehicule> listeVehicules;
     private int vitesseMax;
@@ -34,7 +33,7 @@ public class Convoi {
 
     public int getVitesseMax() throws ConvoiVideException {
         if(!listeVehicules.isEmpty()) {
-            int plusBasseVitesse = VITESSE_MAXI;
+            int plusBasseVitesse = Integer.MAX_VALUE;
             for(int i = 0; i<listeVehicules.size(); i++) {
                 int vitesseActuelle = listeVehicules.get(i).getVitesseMax();
                 if(vitesseActuelle < plusBasseVitesse) {

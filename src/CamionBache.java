@@ -1,7 +1,7 @@
 public class CamionBache extends Vehicule {
 
     public CamionBache() {
-        super(4000, 20000, 0);
+        super(4000, 20000, 130);
         this.vitesseMax = calcVitesseMax();
     }
 
