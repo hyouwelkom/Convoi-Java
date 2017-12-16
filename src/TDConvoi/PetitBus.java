@@ -1,3 +1,5 @@
+package TDConvoi;
+
 public class PetitBus extends Vehicule {
 
     public PetitBus() {

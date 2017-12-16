@@ -1,4 +1,6 @@
-import Exceptions.SurchargeException;
+package TDConvoi;
+
+import TDConvoi.Exceptions.SurchargeException;
 
 import java.util.UUID;
 
@@ -7,7 +9,7 @@ public abstract class Vehicule implements Machine {
     private final int poidsAVide;
     private final UUID immatriculation;
     protected int charge;
-    private final int chargeMax;
+    protected final int chargeMax;
     protected int vitesseMax;
 
     protected static final int VITESSE_MAX = 130;
@@ -45,6 +47,8 @@ public abstract class Vehicule implements Machine {
     public int getHorsePower() {
         return HORSE_POWER;
     }
+
+    public int getChargeMax() { return this.chargeMax; }
 
     public UUID getImmatriculation() {
         return immatriculation;

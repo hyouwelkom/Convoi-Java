@@ -1,7 +1,9 @@
-public class CamionBache extends Vehicule {
+package TDConvoi;
 
-    public CamionBache() {
-        super(4000, 20000, VITESSE_MAX);
+public class CamionCiterne extends Vehicule {
+
+    public CamionCiterne() {
+        super(3000, 10000, VITESSE_MAX);
         this.vitesseMax = calcVitesseMax();
     }
 
@@ -11,11 +13,11 @@ public class CamionBache extends Vehicule {
             return 130;
         } else
 
-        if(this.charge <= 3000) {
+        if(this.charge <= 1000) {
             return 110;
         } else
 
-        if(3000 < this.charge && this.charge <= 7000) {
+        if(1000 < this.charge && this.charge <= 4000) {
             return 90;
         } else return 80;
 
@@ -25,5 +27,4 @@ public class CamionBache extends Vehicule {
     public int getVitesseMax() {
         return this.calcVitesseMax();
     }
-
 }

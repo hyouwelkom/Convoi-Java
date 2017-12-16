@@ -1,6 +1,8 @@
-import Exceptions.ConvoiVideException;
-import Exceptions.VehiculeDejaPresent;
-import Exceptions.VehiculeNonPresent;
+package TDConvoi;
+
+import TDConvoi.Exceptions.ConvoiVideException;
+import TDConvoi.Exceptions.VehiculeDejaPresent;
+import TDConvoi.Exceptions.VehiculeNonPresent;
 
 import java.util.ArrayList;
 
@@ -53,7 +55,7 @@ public class Convoi {
         if(!listeVehicules.isEmpty()) {
             int chargesMaxTotales = 0;
             for(int i = 0; i<listeVehicules.size(); i++) {
-                chargesMaxTotales += listeVehicules.get(i).charge;
+                chargesMaxTotales += listeVehicules.get(i).chargeMax;
             }
             return chargesMaxTotales;
         } else {

@@ -1,4 +1,4 @@
-package Exceptions;
+package TDConvoi.Exceptions;
 
 public class ConvoiVideException extends Exception {
     public ConvoiVideException() {
